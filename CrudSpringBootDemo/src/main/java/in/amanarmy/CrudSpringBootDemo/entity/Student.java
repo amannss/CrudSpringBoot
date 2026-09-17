@@ -55,3 +55,16 @@ public class Student {
         this.subject = subject;
     }
 }
+
+
+// for postman
+//{
+//		"id" : 1 ,
+//		"name" : "aman" ,
+//		"age" : 15,
+//		"email" : "aman@gmail.com" ,
+//		"rollno" : 17 ,
+//		"subject" : "science"
+//}
+//
+// http://localhost:8080/api/students/create

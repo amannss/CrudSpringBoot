@@ -13,7 +13,6 @@ public class StudentService {
     // works as manager between repo and contoller
 
     private StudentRepository studentrepo ;
-
     public StudentService(StudentRepository st)
     {
         this.studentrepo = st ;
@@ -24,6 +23,7 @@ public class StudentService {
         System.out.println("student service");
         //Student studentresp = studentrepo.savestudent(studentreq) ;
         Student studentresp = studentrepo.save(studentreq) ; // jpa method save
+
         return studentresp ;
 
     }

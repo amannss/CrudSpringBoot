@@ -2,6 +2,8 @@ package in.amanarmy.CrudSpringBootDemo.controller;
 
 import in.amanarmy.CrudSpringBootDemo.entity.Student;
 import in.amanarmy.CrudSpringBootDemo.service.StudentService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +20,11 @@ public class StudentController {
     }
 
     @PostMapping("/create")
-    public Student createStudent(@RequestBody Student s){
+    public ResponseEntity<Student> createStudent(@RequestBody Student s){
 
             System.out.println("student controller");
             Student createdStudent = studentService.createStudent(s) ;
-            return createdStudent ;
+            return ResponseEntity.status(HttpStatus.CREATED).body(createdStudent);
     }
     @PostMapping("/read")
     public String readStudent(@RequestBody Student s) {
