@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.*;
 
 @Entity
 
@@ -13,9 +14,20 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     // testing
     private long id ;
+
+
+    @NotBlank
+    @Size(min = 3 , max = 50 , message = "name should be of size between 3 to 50")
     private String name ;
+
+    @NotNull(message = "age is required")
+    @Min(value = 18)
     private int age ;
+
+    @Email
     private String email ;
+
+
     private int rollno ;
     private String subject ;
     private Boolean deleted ;
